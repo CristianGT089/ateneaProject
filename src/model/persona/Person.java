@@ -3,6 +3,7 @@ package model.persona;
 import java.util.Date;
 
 public abstract class Person {
+    private int id;
     private String name;
     private String phoneNumber;
     private Date bornDate;
@@ -17,6 +18,23 @@ public abstract class Person {
         this.bornDate = bornDate;
         this.address = address;
         this.email = email;
+    }
+
+    public Person(int id, String name, String phoneNumber, Date bornDate, String address, String email) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.bornDate = bornDate;
+        this.address = address;
+        this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

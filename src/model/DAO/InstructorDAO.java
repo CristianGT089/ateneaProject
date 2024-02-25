@@ -7,5 +7,7 @@ import model.persona.Instructor;
 public interface InstructorDAO {
     void addInstructor(Instructor instructor) throws SQLException;
     List<Instructor> getAllInstructors() throws SQLException;
-    // Otros métodos de DAO como updateInstructor(), deleteInstructor(), etc.
+    void updateInstructor(Instructor updatedInstructor) throws SQLException;
+    void deleteInstructor(int id) throws SQLException;
+
 }

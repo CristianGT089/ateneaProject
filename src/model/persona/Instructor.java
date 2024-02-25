@@ -10,4 +10,8 @@ public class Instructor extends Person{
         super(name, phoneNumber, bornDate, address, email);
     }
 
+    public Instructor(int id, String name, String phoneNumber, Date bornDate, String address, String email){
+        super(id, name, phoneNumber, bornDate, address, email);
+    }
+
 }

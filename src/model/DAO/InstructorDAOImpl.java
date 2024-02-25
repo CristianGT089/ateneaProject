@@ -38,6 +38,7 @@ public class InstructorDAOImpl implements InstructorDAO{
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     Instructor instructor = new Instructor();
+                    instructor.setId(resultSet.getInt("id"));
                     instructor.setName(resultSet.getString("name"));
                     instructor.setPhoneNumber(resultSet.getString("phoneNumber"));
                     instructor.setBornDate(new Date(resultSet.getDate("bornDate").getTime()));
@@ -48,6 +49,29 @@ public class InstructorDAOImpl implements InstructorDAO{
             }
         }
         return instructors;
+    }
+
+    @Override
+    public void updateInstructor(Instructor updatedInstructor) throws SQLException {
+        String query = "UPDATE instructor SET name=?, phoneNumber=?, bornDate=?, address=?, email=? WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, updatedInstructor.getName());
+            statement.setString(2, updatedInstructor.getPhoneNumber());
+            statement.setDate(3, new java.sql.Date(updatedInstructor.getBornDate().getTime()));
+            statement.setString(4, updatedInstructor.getAddress());
+            statement.setString(5, updatedInstructor.getEmail());
+            statement.setInt(6, updatedInstructor.getId());
+            statement.executeUpdate();
+        }
+    }
+
+    @Override
+    public void deleteInstructor(int id) throws SQLException {
+        String query = "DELETE FROM instructor WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        }
     }
     
 }
