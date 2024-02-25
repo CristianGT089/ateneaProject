@@ -1,20 +1,14 @@
 import java.sql.Connection;
 
-import model.Connection.ConectionSQL;
+import controller.Controller;
 
 public class App {
 
     private static Connection c;
     public static void main(String[] args) throws Exception {
+        
+        Controller control = new Controller();
 
-        try {
-            c = ConectionSQL.getConnection();
-        } catch (Exception e) {
-            System.out.println("Librería no encontrada" + e);
-        }
-
-        Back back = new Back();
-        back.getHola();
         
     }
 

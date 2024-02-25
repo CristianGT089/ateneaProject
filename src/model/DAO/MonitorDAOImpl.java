@@ -13,6 +13,10 @@ import model.persona.Monitor;
 public class MonitorDAOImpl implements MonitorDAO {
     private Connection connection;
 
+    public MonitorDAOImpl(Connection connection) {
+        this.connection = connection;
+    }
+
     @Override
     public void addMonitor(Monitor monitor) throws SQLException {
         String query = "INSERT INTO monitor (name, phoneNumber, bornDate, address, email) VALUES (?, ?, ?, ?, ?)";

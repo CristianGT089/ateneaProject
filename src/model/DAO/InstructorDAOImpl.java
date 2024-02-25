@@ -13,6 +13,9 @@ import model.persona.Instructor;
 public class InstructorDAOImpl implements InstructorDAO{
     private Connection connection;
 
+    public InstructorDAOImpl(Connection connection) {
+        this.connection = connection;
+    }
 
     @Override
     public void addInstructor(Instructor instructor) throws SQLException {
