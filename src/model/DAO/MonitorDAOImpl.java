@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import model.persona.Monitor;
@@ -20,7 +20,7 @@ public class MonitorDAOImpl implements MonitorDAO {
 
     @Override
     public void addMonitor(Monitor monitor) throws SQLException {
-        String query = "INSERT INTO monitor (id, name, phoneNumber, bornDate, address, email) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO monitor (name, phoneNumber, bornDate, address, email) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, monitor.getName());
             statement.setString(2, monitor.getPhoneNumber());
@@ -28,6 +28,7 @@ public class MonitorDAOImpl implements MonitorDAO {
             statement.setString(4, monitor.getAddress());
             statement.setString(5, monitor.getEmail());
             statement.executeUpdate();
+
         }
     }
     

@@ -1,6 +1,6 @@
 package model.persona;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Monitor extends Person{
     

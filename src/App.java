@@ -11,8 +11,7 @@ public class App {
         Controller control = new Controller(model,frm);
         control.iniciar();
         frm.setVisible(true);
-        
-        
+         
     }
 
 }
