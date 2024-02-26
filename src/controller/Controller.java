@@ -1,6 +1,7 @@
 package controller;
 
 import Vista.Vista;
+import Vista.VistaInstructor;
 import Vista.VistaMonitor;
 
 import java.awt.event.ActionEvent;
@@ -27,20 +28,22 @@ public class Controller implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e){
+
         if(e.getSource()==vista.monitor){
-           //Monitor ins = new Monitor();
+           
            VistaMonitor frm = new VistaMonitor();
-           MonitorController moncon = new MonitorController(model.getMonitorDAO(),frm);
+           MonitorController moncon = new MonitorController(model.getMonitorDAO(), frm);
            moncon.iniciar();
            frm.setVisible(true);
            vista.dispose();
         }
         if(e.getSource()==vista.instructor){
-            /*Instructor ins = new Instructor();
+            
             VistaInstructor frm = new VistaInstructor();
-            InstructorDAOImpl insc = new InstructorDAOImpl(c);
-            ControladorInstructor inscon = new ControladorInstructor(ins, insc, frm);
-            frm.setVisible(true);*/
+            InstructorController inscon = new InstructorController(model.getInstructorDAO(), frm);
+            inscon.iniciar();
+            frm.setVisible(true);
+            vista.dispose();
         }
     }
 

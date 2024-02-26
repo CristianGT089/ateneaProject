@@ -31,6 +31,29 @@ public class InstructorDAOImpl implements InstructorDAO{
     }
 
     @Override
+    public Instructor getInstructor(int id) throws SQLException {
+        Instructor instructor = new Instructor();
+    
+        String query = "SELECT * FROM instructor WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) { // Comprueba si hay un resultado antes de acceder a él
+                    instructor.setId(resultSet.getInt("id"));
+                    instructor.setName(resultSet.getString("name"));
+                    instructor.setPhoneNumber(resultSet.getString("phoneNumber"));
+                    instructor.setBornDate(new Date(resultSet.getDate("bornDate").getTime()));
+                    instructor.setAddress(resultSet.getString("address"));
+                    instructor.setEmail(resultSet.getString("email"));
+                }else{
+                    instructor = null;
+                }
+            }
+        }
+        return instructor;
+    }   
+
+    @Override
     public List<Instructor> getAllInstructors() throws SQLException {
         List<Instructor> instructors = new ArrayList<>();
         String query = "SELECT * FROM instructor";

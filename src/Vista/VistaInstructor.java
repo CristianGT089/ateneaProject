@@ -32,25 +32,24 @@ public class VistaInstructor extends javax.swing.JFrame {
 
         btnSave = new javax.swing.JButton("Guardar");
         btnUpdate = new javax.swing.JButton("Actualizar");
-        btnSearch = new javax.swing.JButton("Guardar");
+        btnSearch = new javax.swing.JButton("Buscar");
         btnDelete = new javax.swing.JButton("Eliminar");
+        lblTitle = new javax.swing.JLabel("Instructor");
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblId = new javax.swing.JLabel("Id");
+        lblName = new javax.swing.JLabel("Nombre");
+        lblPhone = new javax.swing.JLabel("Teléfono");
+        lblAddress = new javax.swing.JLabel("Dirección");
+        lblEmail = new javax.swing.JLabel("Email");
+        lblBornDate = new javax.swing.JLabel("Fecha de nacimiento");
+        tfId = new javax.swing.JTextField("");
         tfName = new javax.swing.JTextField("");
-        tfPhoneNumber = new javax.swing.JTextField("");
+        tfPhone = new javax.swing.JTextField("");
         tfAddress = new javax.swing.JTextField("");
         tfEmail = new javax.swing.JTextField("");
         tfBornDate = new javax.swing.JTextField("");
-        lblName = new javax.swing.JLabel("Nombre");
-        lblBornDate = new javax.swing.JLabel("Fecha de nacimiento");
-        lblAddress = new javax.swing.JLabel("Dirección");
-        lblEmail = new javax.swing.JLabel("Email");
-        lblPhone = new javax.swing.JLabel("Teléfono");
-        lblTitle = new javax.swing.JLabel("Instructor");
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-
         
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,11 +60,13 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblId)
                             .addComponent(lblBornDate)
                             .addComponent(lblAddress)
                             .addComponent(lblEmail))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfId)
                             .addComponent(tfAddress)
                             .addComponent(tfEmail)
                             .addComponent(tfBornDate)))
@@ -77,7 +78,7 @@ public class VistaInstructor extends javax.swing.JFrame {
                                 .addComponent(lblTitle)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(tfName, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfPhoneNumber)))
+                            .addComponent(tfPhone)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -99,12 +100,16 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblId)
+                    .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
                     .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhone)
-                    .addComponent(tfPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAddress)
@@ -169,15 +174,16 @@ public class VistaInstructor extends javax.swing.JFrame {
     public javax.swing.JButton btnSave;
     public javax.swing.JButton btnUpdate;
     public javax.swing.JButton btnDelete;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblBornDate;
-    private javax.swing.JLabel lblTitle;
+    public javax.swing.JTextField tfId;
     public javax.swing.JTextField tfName;
-    public javax.swing.JTextField tfPhoneNumber;
+    public javax.swing.JTextField tfPhone;
     public javax.swing.JTextField tfAddress;
     public javax.swing.JTextField tfEmail;
     public javax.swing.JTextField tfBornDate;

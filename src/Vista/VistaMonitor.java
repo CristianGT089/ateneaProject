@@ -32,13 +32,13 @@ public class VistaMonitor extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -52,7 +52,7 @@ public class VistaMonitor extends javax.swing.JFrame {
 
         jLabel5.setText("Fecha de nacimiento");
 
-        jButton1.setText("Buscar");
+        btnSearch.setText("Buscar");
 
         jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,15 +61,15 @@ public class VistaMonitor extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Guardar");
+        btnSave.setText("Guardar");
 
         jTextField2.setText("jTextField2");
 
-        jButton3.setText("Actualizar");
+        btnUpdate.setText("Actualizar");
 
         jTextField3.setText("jTextField3");
 
-        jButton4.setText("Borrar");
+        btnDelete.setText("Borrar");
 
         jTextField4.setText("jTextField4");
 
@@ -100,13 +100,13 @@ public class VistaMonitor extends javax.swing.JFrame {
                         .addGap(90, 90, 90)
                         .addComponent(jTextField2))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnSearch)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(btnSave)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(btnUpdate)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(btnDelete)
                         .addGap(0, 36, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,10 +153,10 @@ public class VistaMonitor extends javax.swing.JFrame {
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnSearch)
+                    .addComponent(btnSave)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnDelete))
                 .addContainerGap())
         );
 
@@ -203,10 +203,10 @@ public class VistaMonitor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
-    public javax.swing.JButton jButton4;
+    public javax.swing.JButton btnSearch;
+    public javax.swing.JButton btnSave;
+    public javax.swing.JButton btnUpdate;
+    public javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

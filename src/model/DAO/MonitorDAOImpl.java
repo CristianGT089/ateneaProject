@@ -30,6 +30,29 @@ public class MonitorDAOImpl implements MonitorDAO {
             statement.executeUpdate();
         }
     }
+    
+    @Override
+    public Monitor getMonitor(int id) throws SQLException {
+        Monitor monitor = new Monitor();
+    
+        String query = "SELECT * FROM monitor WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) { // Comprueba si hay un resultado antes de acceder a él
+                    monitor.setId(resultSet.getInt("id"));
+                    monitor.setName(resultSet.getString("name"));
+                    monitor.setPhoneNumber(resultSet.getString("phoneNumber"));
+                    monitor.setBornDate(new Date(resultSet.getDate("bornDate").getTime()));
+                    monitor.setAddress(resultSet.getString("address"));
+                    monitor.setEmail(resultSet.getString("email"));
+                }else{
+                    monitor = null;
+                }
+            }
+        }
+        return monitor;
+    }   
 
     @Override
     public List<Monitor> getAllMonitors() throws SQLException {
@@ -74,5 +97,6 @@ public class MonitorDAOImpl implements MonitorDAO {
             statement.executeUpdate();
         }
     }
+
 
 }
